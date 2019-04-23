@@ -1,0 +1,77 @@
+/*
+	feuille de style pour le format smatphone en portrait
+*/
+
+/*
+	contenu
+*/
+
+#element{
+	grid-template-columns: 1fr;
+}
+
+/*
+	/--------------------------------------------- Mise en page du header --------------------------------------/ 
+*/
+header{	
+	height: 150px;
+}
+
+#logo{
+	height:40px;
+	width:40px;
+}
+
+#logo_header{
+	grid-column: 2/3;
+    grid-row: 1/2;
+}
+
+#title_header{
+	grid-column: 3/10;
+	grid-row: 1/2;
+	font-size: 1.5em;
+}
+
+#login{
+	grid-column: 2/10;
+	grid-row: 3/5;
+}
+
+#title_login{
+	grid-column: 4/8;
+	grid-row: 1/2;
+	font-size: 0.8em;
+}
+
+.valid_login{
+	grid-column: 2/6;
+	grid-row: 8/11;
+}
+
+#signin{
+	grid-column: 6/10;
+	grid-row: 8/10;
+	margin: auto;
+}
+
+.email{
+	grid-column: 1/6;
+	grid-row: 4/8;
+	margin-left: 5px;
+	margin-right: 5px;	
+}
+
+.pass{
+	grid-column: 6/11;
+	grid-row: 4/8;
+	margin-left: 5px;
+	margin-right: 5px;	
+}
+/*
+	/-------------------------------------- Mise en page affichage des articles -------------------------------------/
+*/
+#papers{
+	grid-column: 1/5;
+}
+

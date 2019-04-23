@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Forum developpeurs acueil</title>
+			<link rel="shortcut icon" href="http://<%=session.adr_ip%>:8080/img/animated_favicon1.gif" >
+			<link rel="icon" type="image/gif" href="http://<%=session.adr_ip%>:8080/img/animated_favicon1.gif" >
+	</head>
+	<body>
+		<div id="page">
+
+			<%- include('header') %>	
+
+			<div id="content">
+				<div id="element">
+
+	        		 <% for(var i = (topics.length-1) ; i >= 0 ; i--) {
+
+			   		 topic = topics[i];  
+			   		 var dateTopic = topic.date;%>
+			   		 	<a href="/forum/papers/<%=topic.title %>">			   		 	
+					   		<section class="topics">
+
+						    	<article class="article_topic">
+						    		<h3 class="h3_sujet"><%=topic.title %></h3>
+						    	</article>
+						    	<aside class="aside_topic">
+						    		<%= topic.author%> </br>
+						    		sujet ouvert le <%=dateTopic.getDate()%>/<%=dateTopic.getMonth()+1%>/<%=dateTopic.getFullYear()%>	  
+						    	</aside>
+						    	
+					    	</section>
+				    	</a>
+			    		
+			    	<% } %>
+
+			    	<!--------------------------- formulaire de nouveau sujet ------------------------------>
+
+			    			<section class="topics">
+
+								<article class="article_new_topic">
+									<h2>Ajouter un nouveau sujet:</h2>
+								</article>
+
+								<%if(!session.connection){%>
+
+			      					<aside class="aside_new_topic" >
+
+										<form id="login_topic" action="/forum/login" method="post">
+									   		<label id="title_login" >Veuilliez vous connecter pour ajouter un nouveau sujet</label>
+									   		<input class="email" type="email" name="mail" required autocomplete ="off">
+									   		<input class="pass" type="password" name="password" required autocomplete ="off">
+									   		<input class="valid_login" type="submit" value="connexion">
+									   		<a href="/forum/signin" id="signin">inscription</a>
+
+									   	</form>
+									</aside>
+
+								<%} else{%>
+
+									<aside class="aside_new_topic">	
+
+										<form id="new_topic" action="/forum/add_topic" method="post">
+				      						<div>
+					        					<label>Titre du sujet</label>
+					        					<input type="text" name="title_topic" required maxlength="20" autocomplete ="off"/>
+					        					<br/>
+				     						</div>
+				     						<p>Nouvelle article :</p>
+					      					<div>
+						       					<label>Titre de l'article</label>
+						        				<input type="text" name="title_paper" required maxlength="20" autocomplete ="off"/>
+						        				<br/>
+					      					</div>
+					      					<div>
+					        					<label>Article:</label></br>
+					        					<textarea id="textarea_article-topic" name="paper" required autocomplete ="off" ></textarea>    
+					        					<br/>
+					      					</div>
+					      					<input type="submit" value="envoyer" />
+										</form>
+									</aside>
+								<%}%>
+							</section>	
+
+			</div><!-- EO element -->
+			<%- include('statistic') %>
+
+			<a id="retour" href="#page">Retour en haut de la page</a>
+			
+		</div><!-- EO contenu -->
+
+			<%- include('footer') %>
+
+		</div><!-- EO page -->
+	</body>
+</html>

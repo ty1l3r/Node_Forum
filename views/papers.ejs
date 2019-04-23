@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<title><%= session.topic%></title>
+		<link rel="shortcut icon" href="http://<%=session.adr_ip%>:8080/img/animated_favicon1.gif" >
+		<link rel="icon" type="image/gif" href="http://<%=session.adr_ip%>:8080/img/animated_favicon1.gif" >
+
+	</head>
+	<body>
+
+		<div id="page">
+			<%- include('header') %>
+
+			<div id="content">
+				<h2 id="h2_topic"><%= session.topic%></h2>
+
+				<div id="papers">
+
+					<% 	var datePaper;
+
+						for(var i = (papers.length-1) ; i >= 0 ; i--) {
+			  			paper = papers[i];
+			    		comment = paper.comment; 
+			    		datePaper = paper.date;%>
+
+			    		<section class="paper">
+
+			    			<article class="article_paper">
+
+			    				<h3 class="paper_title"><%=paper.title %> </h3>
+			    				<p class="paper_content"> <%=paper.content %> </p>
+			    				<h4 class="paper_info">
+			    					article écrit par <%= paper.author %> le 			    					<%=datePaper.getDate()%>/<%=datePaper.getMonth()+1%>/<%=datePaper.getFullYear()%> a <%=datePaper.getHours()%> h <%=datePaper.getMinutes()%>
+			    				</h4>
+			    			</article>
+			    			<aside class="aside_paper">
+			    				<%comment.forEach(function(comment) {
+			    					 var dateCom = comment.date;
+			    				%>
+				    				<div class="comment" >
+				    					<p class="comment_content"> <%=comment.content %> </p>
+				    					<h4 class="comment_info"> 
+
+				    						écrit par <%=comment.author %> le 			    					<%=dateCom.getDate()%>/<%=dateCom.getMonth()+1%>/<%=dateCom.getFullYear()%> a <%=dateCom.getHours()%> h <%=dateCom.getMinutes()%>
+										</h4> 
+									</div>
+								<%});%>
+
+			    			</aside>
+			    			<div class="add_comment">
+			    				<%if(!session.connection){%>
+									<h4 class="new">Connectez vous pour ajouter un commentaire</h4>
+
+								<%} else{%>
+									<form  class="new_comment" action="/forum/comment/<%=paper.title%>" method="post">					      
+						        		<label class="label_comment">votre commentaire:</label>
+						        		<textarea class="textarea_comment" name="content" required autocomplete ="off"></textarea>
+										<input class="submit_comment" type="submit" value="envoyer" />
+
+				    				</form>
+								<% } %> <!-- EO if/else -->
+
+			    			</div>
+
+			    		</section>	<!-- EO article -->
+			    	<% } %> <!-- EO for -->
+			    		<section class="paper" id="add_paper">
+			    			<img id="logo_plus" src="http://localhost:8080/img/logo++.png">
+			    			<div class="add_papers">
+				    			<%if(!session.connection){%>
+									<h4>Veuillez vous connecter pour ajouter des articles</h4>
+								<%} else{%>
+
+									<form class="new_paper" action="/forum/add_paper/<%=session.topic%>" method="post">
+
+								        <label id="label_paper">titre de l'article</label>
+								        <input id="input_paper" type="text" name="title" maxlength="50" autocomplete ="off" required />
+						        		<textarea id="textarea_paper" name="paper" required autocomplete ="off" placeholder="ecrire ici le contenu de votre article"></textarea>
+								        <input id="submit_paper" type="submit" value="envoyer" required/>
+
+							    </form>	
+
+							    <%}%>
+			    			</div>
+			     		</section>
+				</div><!-- EO articles -->
+				
+				<%- include('statistic') %>
+
+			</div><!-- EO contenu -->
+
+			<%- include('footer') %>
+
+		</div><!-- EO page -->
+	</body>
+</html>

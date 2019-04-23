@@ -1,0 +1,822 @@
+/*
+	/------------------------------------	Feuille de style general a tous les formats ----------------------------/
+*/
+
+body{
+	background-color:#2ac9f5e2;
+}
+
+#page{	
+	width: 90%;
+	margin: auto;
+	border: solid #d2cdcde2 5px;
+	background-color: #bfbfbf9e;
+	border-radius: 100px;
+}
+
+p{
+	overflow: auto;
+}
+
+textarea{
+	border-radius:50px;
+	padding-left: 20px;
+	resize: none;
+}
+
+a{
+	text-decoration: none ;
+	color: black;
+}
+
+input{
+	border-radius: 70px;
+}
+
+#retour{
+	margin: auto;
+	grid-column: 1/5;
+}
+
+/*
+	/-------------------------------- Modification du scrollbar --------------------------------------------/
+*/
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+ 
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    border-radius: 10px;
+}
+ 
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+/*
+	/--------------------------------------- Mise en page du header ------------------------------------------/
+*/
+
+header{
+	background-color:#fe792c7d;
+	display: grid;	
+	grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10% ;
+	grid-template-rows: 20% 20% 20% 20% 20%;
+	width: 94%;
+	padding: 2%;
+	border-radius: 80px;
+	margin: 20px auto;
+}
+
+#title_header{
+	color: #fc0c0cbf;
+	margin: auto;
+}
+
+/*
+	/------------------------------------ Formulaire d'authentification du header ----------------------------------/
+*/
+#login{
+	width: 100%;
+	height: 100%;
+}
+
+#login_form{
+	height: 100%;
+	width: 100%;
+	display: grid;
+	grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+	grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+	background-color: #bfbfbfe0;
+	border-radius: 70px;
+	border: groove;
+}
+
+#login_form:hover{
+	border: ridge;
+}
+
+#title_login{
+	margin: auto;
+}
+
+.email:invalid {
+	background: url("../img/sprite.png") -316px -32px no-repeat;
+	padding-left: 30px;	
+}
+
+.email:valid{
+	border: outset;
+	background: url("../img/sprite.png") 0px -32px no-repeat;
+	padding-left: 30px;
+}
+
+.pass:invalid {
+	background: url("../img/sprite.png") -316px -98px no-repeat;
+	padding-left: 30px;
+}
+
+.pass:valid{
+	border: outset;
+	background: url("../img/sprite.png") 0px -98px no-repeat;
+	padding-left: 30px;
+}
+
+.valid_login{
+ 	background-color: grey;
+ 	color:#fc0c0cbf;
+}
+
+#signin{
+	color: #fc0c0cbf;
+	background-color: grey;
+	border: outset grey 1px;
+	margin: auto;
+	padding: 0px 10px ;
+	border-radius: 70px;
+}
+
+/*
+	/--------------------------------------- Mise en page du contenu de "index" ----------------------------------------/
+*/
+#content{
+	display: grid;
+	grid-template-columns: 25% 25% 25% 25%;	
+}
+
+#element{
+	display: grid;
+	margin: 10px auto;
+	width: 96%;
+	height: fit-content;
+}
+/*
+	/----------------------------- Afichage des porfolio avec les Sujets --------------------------------------------/
+*/
+.topics{
+	width: 90%;
+	height: 220px;
+	margin: 5px auto;
+	display: grid;
+	grid-template-rows: 25% 25% 25% 25%;
+	background: url("../img/fond_sujets.png")-200px -300px no-repeat;
+	border-radius: 50px;
+	padding: 2%;
+	border: #caccce 2px solid;
+}
+
+.topics:hover{
+	background: url("../img/fond_sujets.png")-200px -84px no-repeat;
+}
+
+.article_topic{
+	grid-row: 1/5;
+	margin: auto;
+}
+.aside_topic{
+	display: none;
+}
+
+.topics:hover .aside_topic{
+	display: contents;
+	grid-row:4/5;
+	margin:1px;
+}
+
+.topics:hover .article_topic{	
+	grid-row: 1/4;
+	margin:1px;
+}
+
+/*
+	/------------------------------------- Formulaire nouveau sujet -------------------------------------------/
+*/
+.article_new_topic{
+	grid-row: 1/5;
+	margin: auto;
+}
+
+.topics:hover .article_new_topic{
+	display: none;
+}
+
+.aside_new_topic{
+	display: none;
+}
+
+.topics:hover .aside_new_topic{
+	display: contents;
+	grid-row: 1/5;
+	width: 90%;
+	margin: auto;
+	padding: 5px;
+}
+
+#new_topic{
+	width: 90%;
+	margin: auto;
+	padding: 5px;
+	height: 90%;
+}
+
+#new_topic input{
+	width: 94%;
+	height: 94%
+	margin: auto;
+}
+
+/*
+	/------------------------------   Formulaire d'authentification dans les sujets --------------------------------/
+*/
+#login_topic{
+	grid-row: 1/6;
+	display:grid;
+	grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+	grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+}
+
+#login_topic #title_login{
+	grid-row: 2/4;
+	grid-column: 2/10;
+}
+
+#login_topic .email{
+	grid-row: 4/5;
+	grid-column: 2/10;
+	background: url("../img/sprite.png") -316px -36px no-repeat;
+	padding-left: 30px;
+}
+
+#login_topic .email:valid{
+	border: outset;
+	background: url("../img/sprite.png") 0px -40px no-repeat;
+	padding-left: 30px;
+}
+
+#login_topic .pass{
+	grid-row: 6/7;
+	grid-column: 2/10;
+	background: url("../img/sprite.png") -316px -100px no-repeat;
+	padding-left: 30px;
+}
+#login_topic .pass:valid{
+	border: outset;
+	background: url("../img/sprite.png") 0px -103px no-repeat;
+	padding-left: 30px;
+}
+
+#login_topic .valid_login{
+	grid-row: 8/9;
+	grid-column: 2/6;
+	margin-right: 5px;
+}
+
+#login_topic #signin{
+	grid-row: 8/9;
+	grid-column: 6/10;
+}
+
+#textarea_article-topic{
+	width: 90%;
+	height: 10%;
+}
+
+/*
+	/-------------------------------- Mise en page de la page d'affichage des articles -----------------------------/
+*/
+#papers{
+	margin:10px 2%;
+	width: 96%;
+	height: fit-content;
+}
+
+
+
+#h2_topic{
+	margin: auto;
+	grid-column: 1/4
+}
+
+.paper{
+	width: 96%;
+	height: 200px;
+	margin: auto;
+	padding: 2px;
+	margin-bottom: 10px;
+	border: inset;
+	border-radius: 50px;
+}
+
+.paper:hover{
+	height: 600px;
+	display: grid;
+	grid-template-rows: 40% 50% 10%;
+	border: outset;
+}
+
+.article_paper{
+	background-color: #91b9f7;
+	display: grid;
+	grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+	grid-template-columns: 20% 20% 20% 20% 20%;
+	height: 90%;
+	width: 97%;
+	border-radius: 50px;
+	margin: auto;
+	padding: 10px;
+}
+.paper:hover .article_paper{
+	grid-row:1/2;
+}
+
+.aside_paper{
+	display:none;
+}
+
+.paper:hover .aside_paper{
+	grid-row:2/3;
+	width: 99%;
+	height: 100%;
+	overflow: auto;
+	display: grid;
+	margin: auto;
+}
+
+.paper_title{
+	grid-row:1/2;
+	grid-column:2/5;
+}
+
+.paper:hover .paper_title{
+	grid-row:1/7;
+	grid-column:1/2;
+	writing-mode: vertical-rl;
+  	margin: auto;
+  	overflow: hidden;
+}
+
+.paper_content{
+	grid-row:3/9;
+	grid-column:1/6;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	border: inset;
+	background: url("../img/fond_article.png") 0px -240px no-repeat;
+}
+
+.paper:hover .paper_content{
+	grid-row:1/10;
+	grid-column:2/6;
+	overflow: auto;
+	background: url("../img/fond_article.png") 0px -2px no-repeat;
+}
+
+.paper_info{
+	grid-row:8/10;
+	grid-column:1/6;
+}
+
+.paper:hover .paper_info{
+	grid-row:9/11;
+	grid-column:1/6;
+	margin: auto;
+}
+
+.comment{ 
+	display: grid;
+	grid-template-columns: 20% 20% 20% 20% 20%;
+	height: 100px;
+	padding: 2px;
+}
+
+.comment_content{
+	border: outset;
+	grid-column: 1/5;
+	overflow: auto;
+	background-color: white;
+}
+
+.comment_info{
+	grid-column: 5/6;
+}
+
+.add_comment{
+	display:none;
+}
+
+.article:hover .add_comment{
+	display: grid;
+}
+
+/*
+	/------------------------------------ Formulaire de nouveau commentaire ---------------------------------/
+*/
+.new{
+	margin:auto;
+}
+
+.new_comment{
+	display: grid;
+	grid-template-rows: 20% 20% 20% 20% 20%;
+	grid-template-columns: 20% 20% 20% 20% 10% 10%;
+	width: 100%;
+	height: 100%;
+}
+
+.label_comment{
+	grid-row: 2/5;
+	grid-column:1/2;
+	margin: auto;
+}
+
+.textarea_comment{
+	grid-column:2/6;
+	grid-row: 2/5;
+}
+
+.submit_comment{
+	grid-row:2/5;
+	grid-column:6/7;
+	width: 80%;
+	height: 100%;
+	margin: auto;
+}
+
+/*
+	/----------------------------------- Formulaire de nouveaux articles ---------------------------------------/
+*/
+#add_paper{
+	height: 150px;
+}
+
+#add_paper:hover{
+	height: 300px;
+	background-color: #2ac9f5e2;
+}
+
+#logo_plus{
+	width: 150px;
+	height: 150px;
+}
+
+#add_paper:hover #logo_plus{
+	width: 20px;
+	height: 20px;
+}
+
+.add_papers{
+	display: none;
+}
+
+.paper:hover .add_papers{
+	grid-row: 1/4;
+	grid-column: 1/4;
+	width: 100%;
+	height: 100%;
+	width: 20%;
+	margin: auto;
+	display: contents;
+}
+
+.new_paper {
+	margin: auto;
+	grid-row: 1/3;
+	border: outset;
+	display: grid;
+	grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+	grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+	width: 95%;
+	height: 80%;
+	background-color:#bfbfbfe0; 	
+}
+
+#label_paper {
+	grid-column: 3/5;
+	grid-row: 2/3;
+	margin: auto;
+}
+ 
+#input_paper {
+	grid-column: 5/10;
+	grid-row: 2/3;
+	width: 100%
+	margin: auto;
+	border-radius: 50px;
+	padding-left: 10px;	
+}
+
+#textarea_paper {
+	grid-column: 2/10;
+	grid-row: 4/8;	
+}
+
+#submit_paper {
+	grid-column: 2/10;
+	grid-row: 9/10;
+}
+
+/*
+	/----------------------------------- Mise en page de la page d'inscription ---------------------------------------/
+*/
+#form_signin{
+	border: outset;
+	margin: 30px auto ;
+	width: 300px;
+	height: 400px;
+	border-radius: 30px;
+	display: grid;
+	grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10% ;
+	grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10% ;
+	background-color: #c41d1ec2;
+}
+
+.title_signin{
+	grid-row: 1/2;
+	grid-column: 1/11 ;
+	margin: auto;
+}
+
+.label_username{
+	grid-row: 3/4;
+	grid-column: 2/5;
+	margin : auto;
+}
+
+.input_username{
+	grid-row: 3/4;
+	grid-column: 5/10;
+	margin : auto;
+	padding-left: 25px;
+	background: url("../img/sprite.png") -317px -5px no-repeat;
+	width: 100%;
+}
+
+.input_username:valid{
+	background: url("../img/sprite.png") 0px -6px no-repeat;
+	border:outset;
+}
+
+.label_mail{
+	grid-row: 4/5;
+	grid-column: 2/5;
+	margin : auto;
+}
+
+.input_mail{
+	grid-row: 4/5;
+	grid-column:5/10 ;	
+	margin : auto;
+	padding-left: 25px;
+	background: url("../img/sprite.png") -317px -36px no-repeat;
+	width: 100%;
+}
+
+.input_mail:valid{
+	background: url("../img/sprite.png") 0px -36px no-repeat;
+	border:outset;
+}
+
+.label_mdp{
+	grid-row: 6/7 ;
+	grid-column:2/5 ;
+	margin : auto;	
+}
+
+.input_mdp{
+	grid-row: 6/7;
+	grid-column: 5/10;
+	margin : auto;
+	border-radius: 20px;
+	padding-left: 25px;	
+	background: url("../img/sprite.png") -317px -101px no-repeat;
+	width: 100%;
+}
+
+.input_mdp:valid{
+	background: url("../img/sprite.png") 0px -102px no-repeat;
+	border:outset;
+}
+
+.label_vmdp{
+	grid-row: 7/8;
+	grid-column:2/5 ;
+	margin : auto;	
+}
+
+.input_vmdp{
+	grid-row: 7/8;
+	grid-column: 5/10;
+	margin : auto;	
+	border-radius: 20px;
+	padding-left: 25px;
+	background: url("../img/sprite.png") -317px -101px no-repeat;
+	width: 100%;
+}
+
+.input_vmdp:valid{
+	background: url("../img/sprite.png") 0px -102px no-repeat;
+	border:outset;
+}
+
+.submit_signin{
+	border: outset;
+	grid-row: 9/10;
+	grid-column:2/10 ;	
+	border-radius: 20px;
+}
+
+.submit_signin:active{
+	border: inset;
+}
+
+/*
+	mise en page info utilisateur
+*/
+#user_info{
+	border: outset;
+	height: 400px;
+	width: 300px;
+	border-radius: 50px;
+	margin:  2% auto;
+	padding: 5px;
+	display: grid;
+	grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10% ;
+	grid-template-columns:  10% 10% 10% 10% 10% 10% 10% 10% 10% 10% ;
+	background-color: #c41d1ec2;
+}
+
+#user_name{
+	grid-row: 1/2;
+	grid-column: 2/10;
+	margin: auto;
+
+}
+#user_mail{
+	grid-row: 2/3;
+	grid-column: 2/10;
+	margin: auto;
+}
+#update_user_mail{
+	grid-row: 4/6;
+	grid-column: 2/10;
+	margin: auto;
+}
+#update_user_password{
+	grid-row: 6/10;
+	grid-column: 2/10;
+	margin: auto;
+}
+
+#user_info input{
+	margin: 2px;
+	border-radius: 50px;
+	width: 94%;
+}
+
+/* 
+	/---------------------------------- mise en page de la barre de statistique ----------------------------------/
+*/
+#stat{
+	background-color: #91b6ffd1;
+	height: 1000px;
+	border: groove ;
+	width: 94%;
+	margin: 10px 3%;
+	display: grid;
+	grid-template-rows: 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5%;
+	grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10% ;
+	border-radius: 50px;
+}
+
+#date_now{
+	grid-row: 1/2 ;
+	grid-column: 2/10;
+	margin: : auto;
+	height: 90%;
+	width: 100%;
+}
+
+#nbT_topics{
+	grid-row: 3/4 ;
+	grid-column:2/10 ;
+	margin: : auto;
+	height: 90%;
+	width: 100%;
+}
+
+#nbT_papers{
+	grid-row: 5/6;
+	grid-column:2/10 ;
+	margin: : auto;
+	height: 90%;
+	width: 100%;
+}
+
+#nbT_users{
+	grid-row: 7/8;
+	grid-column:2/10 ;
+	margin: : auto;
+	height: 90%;
+	width: 100%;
+}
+
+#last_user{
+	grid-row:9/10;
+	grid-column:2/10 ;
+	margin: : auto;
+	height: 90%;
+	width: 100%;
+}
+
+#user_connect{
+	grid-column: 2/10;
+	grid-row: 8/9;
+	margin: : auto;
+	height: 90%;
+	width: 100%;
+}
+#paperMC{
+	grid-row:11/15 ;
+	grid-column:2/10;
+	border: inset;
+	margin:  auto;
+	height: 100%;
+	width: 90%;
+	border-radius: 50px;
+	padding: 5px;
+	background-color: #cc788b;
+}
+
+#paperMC:hover{
+	border: outset;
+}
+
+#last_paper_title{
+	grid-row: 15/16;
+	grid-column: 2/10;
+}
+
+#last_paper{
+	grid-row: 16/21;
+	grid-column:2/10 ;
+	border: inset;
+	margin: auto;
+	height: 90%;
+	width: 90%;
+	display: grid;
+	grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10% ;
+	border-radius: 50px;
+	padding: 5px;
+	background-color: #cc788b;
+}
+
+#last_paper:hover{
+	border: outset;
+}
+
+#last_paper h5{
+	grid-row: 1/2;
+	height: 100%;
+	margin: auto;
+}
+
+#last_paper article{
+	overflow: auto;
+	grid-row: 2/8;
+	background-color: white;
+	margin: 1px;
+	border-radius: 30px;
+	width: 90%;
+	padding: 2px;
+}
+
+#last_paper aside{
+	grid-row: 8/111;
+	overflow: auto;	
+}
+
+/*
+	mise en page du footer
+*/
+footer{
+	display: grid;
+	grid-template-columns: 20% 25% 10% 25% 20% ;
+	grid-template-rows: 33% 33% 34%;
+	height: 150px;
+	width: 94%;
+	background-color:#fe792c7d;
+	border-radius: 80px;
+	margin: 20px auto;
+}
+
+#logo_footer{
+	grid-column: 3/4;
+    grid-row: 1/4;
+}
+
+#copyright{
+	grid-column: 5/6;
+	grid-row: 2/3;
+}

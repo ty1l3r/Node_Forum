@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<article id="stat">
+	<%
+		var dateNow = new Date();
+		var paperMC = statistics.paper_more_comment;
+		var last_paper = statistics.last_paper;	
+		var last_paper_date = 	last_paper.date;				
+	%>
+	<h4 id="date_now">Nous somme le: <%=dateNow.getDate()%>/<%=dateNow.getMonth()+1%>/<%=dateNow.getFullYear()%></h4>
+	<h4 id="nbT_topics">Nombre de sujets ouverts: </br> <%=statistics.nbT_topics %> </h4>
+	<h4 id="nbT_papers">Nombre d'article écrits:</br> <%=statistics.nbT_papers %> </h4>
+	<h4 id="nbT_users">Nombres d'inscrits:</br> <%=statistics.nbT_users %></h4>
+	<h4 id="user_connect"><%=session.user_connect %> Utilisateurs connectés.</br> </h4>
+	<h4 id="last_user">Dernier utilisateur inscrit:</br> <%=statistics.last_user %> </h4>
+
+
+	<section id="paperMC">
+
+		<h4>Article le plus commenté:</h4>
+
+		<a href="/forum/papers/<%=paperMC.topic%>"><h5>titre: <%=paperMC.title %></h5></a>
+		<h5>sujet: <%=paperMC.topic %></h5>
+		<h5>nombre de commentaire: <%=paperMC.nt_comment %></h5>	  
+
+
+		
+	</section>
+	<h4 id="last_paper_title"> Dernier article posté: </h4>
+
+	<section id="last_paper">
+
+		<h5><%=last_paper.title %></h5>
+		
+		<article>
+
+			
+			<p><%=last_paper.content %></p>	
+
+		</article>
+		<aside>
+			ecrit le: <%=last_paper_date.getDate()%>/<%=last_paper_date.getMonth()+1%>/<%=last_paper_date.getFullYear()%> </br>
+			<a href="/forum/papers/<%=last_paper.topic%>"> <%=last_paper.topic %></a>
+			par <%=last_paper.author %>
+
+			
+
+		</aside>	  
+	
+	</section>
+					
+</article> <!-- EO info -->

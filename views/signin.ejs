@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<title>Forum developpeurs Inscrption</title>
+		<link rel="shortcut icon" href="http://<%=session.adr_ip%>:8080/img/animated_favicon1.gif" >
+		<link rel="icon" type="image/gif" href="http://<%=session.adr_ip%>:8080/img/animated_favicon1.gif" >
+
+	</head>
+
+	<body>
+		<div id="page">
+			<%- include('header') %>
+				
+				<form id="form_signin" action="/forum/new_user" method="post">
+
+						<h2 class="title_signin">inscription</h2>
+
+		        			<label class="label_username">Votre pseudo</label>
+		        			<input class="input_username" type="text" name="username" required autocomplete ="off"/>
+		        			<label class="label_mail">adresse mail:</label>
+				        	<input class="input_mail" type="email" name="email" required autocomplete ="off"/>
+			       			<label class="label_mdp">mot de passe</label>
+			        		<input class="input_mdp" type="password" name="password" required/>
+			        		<label class="label_vmdp">verification du mot de passe</label>
+			        		<input class="input_vmdp" type="password" name="vpassword" required/>
+			        		<input class="submit_signin" type="submit" value="Inscription" />
+
+			    </form>
+			<%- include('footer') %>
+		</div>
+	</body>
+</html>
